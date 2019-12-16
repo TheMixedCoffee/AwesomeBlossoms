@@ -1,3 +1,21 @@
+<?php 
+        $curr = $_SESSION['current_user'];
+        if(empty($curr)){
+            header('Location:ServerError.php?invalid=1');
+        }
+       $admin = "SELECT UserType from account where Email='$curr'";
+       $adminRS = mysqli_query($conn,$admin);
+       if(mysqli_num_rows($adminRS) == 1){
+        $row = mysqli_fetch_assoc($adminRS);
+        $test = $row['UserType'];
+        if(strcmp($row['UserType'],"admin") == 0){
+            echo "<script> alert('IMPORTANT: You are accessing the flower shop database'); </script>";
+        }else{
+            header("location:ServerError.php?invalid=1");
+        }
+       }
+        ?>
+
 <?php
     $activePage = 'Flower Shop - Admin';
     if(isset($_GET['addedTag'])){
@@ -27,23 +45,6 @@
 
     <head>
         <link rel="stylesheet" type="text/css" href="../Styles/PurchaseAdmin.css">
-        <?php 
-        $curr = $_SESSION['current_user'];
-        if(empty($curr)){
-            header('Location:ServerError.php?invalid=1');
-        }
-       $admin = "SELECT UserType from account where Email='$curr'";
-       $adminRS = mysqli_query($conn,$admin);
-       if(mysqli_num_rows($adminRS) == 1){
-        $row = mysqli_fetch_assoc($adminRS);
-        $test = $row['UserType'];
-        if(strcmp($row['UserType'],"admin") == 0){
-            echo "<script> alert('IMPORTANT: You are accessing the flower shop database'); </script>";
-        }else{
-            header('location:ServerError.php?invalid=1');
-        }
-       }
-        ?>
     </head>
     <body>
     <div class="row" id="admin-option">

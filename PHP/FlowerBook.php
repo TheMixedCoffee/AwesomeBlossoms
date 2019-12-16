@@ -20,17 +20,6 @@
 			<!--End of Header-->
 			<!--Flower Book div-->
 			<div class="book-section">
-				<div>
-					<div id="category-dropdown">
-						<h6 id="category-title">Select a Category</h6>
-						<select name="category">
-							<option value ="fotm">Flowers of the Month</option>
-							<option value ="alpha">Alphabetical</option>
-							<option value ="events">Events</option>
-							<option value ="bouquet">Bouquet</option>
-						</select>
-					</div>
-				</div>
 				<div class="contain row text-center">
 					<h2 id="book-header">Flower Book</h2>
 					<div id="book-window row text-center">

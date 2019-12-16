@@ -86,13 +86,20 @@ $activePage = "PurchaseFlowers";
                         $rs = mysqli_stmt_get_result($stmt);
                         while($row = mysqli_fetch_assoc($rs)){
                             $currentItem = $row["itemID"];
+                            if(isset($_POST['addQty'])){
+                                $qty = $_POST['addQty'];
+                                
+                            }else{
+                                $qty = 1;
+                               
+                            }
                             echo '<div class="item-entity col-md-3">
                                     <h3 class="item-title">'.$row["itemName"].'</h3>
                                     <img src="../Images/Shop/'.$row["itemPic"].'" class="item-image" alt="Item Image">
                                     <p class="item-desc">'.$row["itemDesc"].'</p>
                                     <span class="item-price">Price:P'.$row["itemPrice"].'</span>
                                     <form method="POST" action="FlowerStore.php" class="quick-purchase-qty">
-                                        <input type="number" class="quick-purchase-qty-input" name="purchase-qty">
+                                        <input type="number" class="quick-purchase-qty-input" name="addQty" value="'.$qty.'">
                                         <input type="hidden" name="itemID" value="'.$row["itemID"].'">
                                         <button type="submit" class="quick-purchase-btn" name="add">Add to Cart</button>
                                     </form>
