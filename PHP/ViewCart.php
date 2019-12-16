@@ -27,9 +27,18 @@
                             }else{
                                 $qty = 1;
                             }
+                            if(isset($_POST["remove"])){
+                                if($_GET['action'] == 'remove'){
+                                    foreach($_SESSION['cart'] as $key=>$value){
+                                        if($value["itemID"] == $_GET["id"]){
+                                            unset($_SESSION["cart"][$key]);
+                                        }
+                                    }
+                                }
+                            }
                             if(isset($_SESSION['cart'])){
                                 $product_id = array_column($_SESSION['cart'],"itemID");
-                                $query = "SELECT * from item left join order_line on item.itemID=order_line.itemID";
+                                $query = "SELECT * from item inner join order_line on item.itemID=order_line.itemID";
                                 $rs = mysqli_query($conn,$query);
                                 while($row = mysqli_fetch_assoc($rs)){
                                     foreach($product_id as $id){
@@ -42,7 +51,7 @@
                                                 <br>
                                                 <label for="qty">Quantity:</label>
                                                 <input type="number" class="quick-purchase-qty-input" name="addQty" value='.$row["quantity"].'>
-                                                <button type="submit" class="btn" name="Remove">Remove</button>
+                                                <button type="submit" class="btn" name="remove">Remove</button>
                                                 </form>
                                                 </div>';
                                         }
