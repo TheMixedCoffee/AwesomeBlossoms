@@ -24,7 +24,7 @@ if(isset($_POST['add'])){
     $priceRS = mysqli_query($conn,$priceQuery);
     $row = mysqli_fetch_assoc($priceRS);
     $itemPrice = $row['itemPrice'];           
-    $itemQty = $_POST['addQty'];
+    $itemQty = 1;
     $totalItemPrice = $itemQty * $itemPrice;
     $query = "INSERT INTO order_line (itemID,quantity,totalPrice) VALUES ('$itemID','$itemQty','$totalItemPrice') LIMIT 1";
     if(mysqli_query($conn,$query)){

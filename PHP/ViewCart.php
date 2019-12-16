@@ -29,7 +29,7 @@
                             }
                             if(isset($_SESSION['cart'])){
                                 $product_id = array_column($_SESSION['cart'],"itemID");
-                                $query = "SELECT * from item";
+                                $query = "SELECT * from item left join order_line on item.itemID=order_line.itemID";
                                 $rs = mysqli_query($conn,$query);
                                 while($row = mysqli_fetch_assoc($rs)){
                                     foreach($product_id as $id){
@@ -41,7 +41,7 @@
                                                 <span class="item-price">Price:P'.$row["itemPrice"].'</span>
                                                 <br>
                                                 <label for="qty">Quantity:</label>
-                                                <input type="number" class="quick-purchase-qty-input" name="addQty" value='.$qty.'>
+                                                <input type="number" class="quick-purchase-qty-input" name="addQty" value='.$row["quantity"].'>
                                                 <button type="submit" class="btn" name="Remove">Remove</button>
                                                 </form>
                                                 </div>';
@@ -58,19 +58,28 @@
                         <p class="det-words">Order Details</p>
                         <div>
                             <?php
+                            $totalPriceCart = 0;
                         if(isset($_SESSION['cart'])){
                                 $product_id = array_column($_SESSION['cart'],"itemID");
-                                $query = "SELECT * from item";
+                                $query = "SELECT * from item left join order_line on item.itemID=order_line.itemID";
                                 $rs = mysqli_query($conn,$query);
                                 while($row = mysqli_fetch_assoc($rs)){
                                     foreach($product_id as $id){
                                         if($row['itemID'] ==  $id){
-                                            $totalPriceItem = $
+                                            $totalPriceItem = $row['itemPrice'] * $row['quantity'];
+                                            $totalPriceCart += $totalPriceItem;
                                             echo '<div class="py-3">
                                                     <span class="cart-item-name">'.$row['itemName'].'</span>
-                                                    <span class="cart-item-qty">'.$qty.'</span>
-                                                    <span class="cart-item-total">'.$qty*
+                                                    <span class="cart-item-qty">'.$row['quantity'].'x</span>
+                                                    <span class="cart-item-total">'.$totalPriceItem.'</span>
+                                                 </div>';
+                                        }
+                                    }
+                                }
+                                echo '<hr><br><span class="cart-total-price">Total:P'.$totalPriceCart.'</span>';
+                            }
                             ?>
+                            
                             <a href="Purchase Flowers - Purchase.html">
                             <button id="purchase-button">Purchase</button>
                             </a>
