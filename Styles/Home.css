@@ -105,4 +105,6 @@ body{
 .gallery-item-image{
     margin-right:1rem;
     margin-bottom:1rem;
+    width: 150px;
+    height: 150px;
 }

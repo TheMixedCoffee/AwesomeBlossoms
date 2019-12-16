@@ -16,8 +16,8 @@ body{
     width:100%;
     background-color: rgb(199, 219, 217);
     padding: 1rem 0rem;
-    margin-top:5rem;
-    position: sticky;
+    margin-top:10px;
+    position: relative;
     bottom: 0;
     
 }
