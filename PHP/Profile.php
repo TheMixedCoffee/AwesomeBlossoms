@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 <link rel="stylesheet" type="text/css" href="../Styles/Profile.css">
+</head>
 <body>
 <?php
 $activePage = "Profile";
