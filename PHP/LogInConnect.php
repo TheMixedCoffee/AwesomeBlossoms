@@ -12,6 +12,7 @@ $conn = mysqli_connect('localhost',$user,$pass,$db);
 		if($numRows == 1){
 			$row = mysqli_fetch_assoc($rs);
 			if(password_verify($Password, $row['Password'])){
+				$_SESSION['accountID'] = $row['AccountID'];
 				$_SESSION['current_user'] = $row['Email'];
 				$_SESSION['login_user'] = $row['FName'];
 				$_SESSION['user_lname'] = $row['LName'];

@@ -91,7 +91,7 @@ $activePage = "PurchaseFlowers";
                                     <img src="../Images/Shop/'.$row["itemPic"].'" class="item-image" alt="Item Image">
                                     <p class="item-desc">'.$row["itemDesc"].'</p>
                                     <span class="item-price">Price:P'.$row["itemPrice"].'</span>
-                                    <form method="POST" action="FlowerStore.php" class="quick-purchase-qty">
+                                    <form method="POST" action="FlowerStore.php?added" class="quick-purchase-qty">
                                         <input type="hidden" name="itemID" value="'.$row["itemID"].'">
                                         <button type="submit" class="quick-purchase-btn" name="add">Add to Cart</button>
                                     </form>

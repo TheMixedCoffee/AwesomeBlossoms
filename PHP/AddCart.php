@@ -23,13 +23,19 @@ if(isset($_POST['add'])){
     $priceQuery = "SELECT * from item WHERE itemID='$itemID'";
     $priceRS = mysqli_query($conn,$priceQuery);
     $row = mysqli_fetch_assoc($priceRS);
+    $Email = $_SESSION['current_user'];
+    $accountQuery = "SELECT AccountID from account where Email='$Email'";
+    $accountRS = mysqli_query($conn,$accountQuery);
+    $accRow = mysqli_fetch_assoc($accountRS);
+    $accountID = $accRow['AccountID'];
     $itemPrice = $row['itemPrice'];           
     $itemQty = 1;
     $totalItemPrice = $itemQty * $itemPrice;
-    $query = "INSERT INTO order_line (itemID,quantity,totalPrice) VALUES ('$itemID','$itemQty','$totalItemPrice') LIMIT 1";
+    $query = "INSERT INTO order_line (itemID,quantity,totalPrice,accountID) VALUES ('$itemID','$itemQty','$totalItemPrice','$accountID') LIMIT 1";
     if(mysqli_query($conn,$query)){
 
     }else{
         echo mysqli_error($conn);
     }
 }
+
