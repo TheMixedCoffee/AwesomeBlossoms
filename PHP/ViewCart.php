@@ -1,5 +1,6 @@
 <?php
-    $activePage = "View Cart";
+   $activePage = "View Cart";
+
 ?>
 <!DOCTYPE html>
     <head>
@@ -8,6 +9,8 @@
     <body>
         <?php
         include("NavBar.php");
+        include("AddCart.php");
+        include("removeFromCart.php");
         ?>
             <!--End of Header-->
             <!--View Cart Us-->
@@ -27,29 +30,21 @@
                             }else{
                                 $qty = 1;
                             }
-                            if(isset($_POST["remove"])){
-                                if($_GET['action'] == 'remove'){
-                                    foreach($_SESSION['cart'] as $key=>$value){
-                                        if($value["itemID"] == $_GET["id"]){
-                                            unset($_SESSION["cart"][$key]);
-                                        }
-                                    }
-                                }
-                            }
                             if(isset($_SESSION['cart'])){
                                 $product_id = array_column($_SESSION['cart'],"itemID");
                                 $query = "SELECT * from item inner join order_line on item.itemID=order_line.itemID";
                                 $rs = mysqli_query($conn,$query);
                                 while($row = mysqli_fetch_assoc($rs)){
                                     foreach($product_id as $id){
-                                        if($row['itemID'] ==  $id){
+                                        if($row['itemID'] ==  $id && $row['accountID'] == $_SESSION['accountID']){
                                             echo '<div class="py-3">
-                                                <form action="ViewCart.php" method="POST">
+                                                <form action="ViewCart.php?action=removed&id='.$row['itemID'].'" method="POST">
                                                 <img src="../Images/Shop/'.$row["itemPic"].'" class="cart-item-img" alt="Item Image">
                                                 <h3 class="item-title">'.$row["itemName"].'</h3>
                                                 <span class="item-price">Price:P'.$row["itemPrice"].'</span>
                                                 <br>
                                                 <label for="qty">Quantity:</label>
+                                                <input type="hidden" name="itemID" value='.$row['itemID'].'>
                                                 <input type="number" class="quick-purchase-qty-input" name="addQty" value='.$row["quantity"].'>
                                                 <button type="submit" class="btn" name="remove">Remove</button>
                                                 </form>
