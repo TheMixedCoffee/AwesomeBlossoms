@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+    <head>
+        <title>Awesome Blossoms</title>
+        <link rel="stylesheet" type="text/css" href="../Styles/ContactUs.css">
+        <link rel="shortcut icon" type="image/png" href="../Images/Icons/Logo/favicon.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!--Content Box-->
+        <div class="container">
+           <img src="../Images/Placeholder/corner-piece.png" class="bg-design-image" id="bg-topleft" alt="corner piece">
+        <img src="../Images/Placeholder/corner-piece2.png" class="bg-design-image" id="bg-side" alt="corner piece">
+        <header class="header">
+            <div class="logo-title">
+                <img src="../Images/Icons/Logo/ABLogo.png" alt="Awesome Blossoms Logo" class="logo-header">
+                <h1 class="header-title">Awesome Blossoms</h1>
+            </div>
+            <nav class="topnav" id="myTopnav">
+                    <a href="Home.html" class="list">Home</a></li>
+                    <a href="PurchaseFlowers.html" class="list">Purchase Flowers</a></li>
+                    <a href="FlowerBook.html" class="list">Flower Book</a></li>
+                    <a href="ContactUs.html" class="list">Contact Us</a></li>
+                    <a href="Profile.html" class="list">Profile</a></li>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+
+ <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+            <!--End of Header-->
+            <!--Contact Us-->
+                <section class = "contact-us-section">
+                    <h2 id="contact-header">Contact Us</h2>
+                    <div class="contact-soc-med">
+                        <a href="http://www.facebook.com"><img src="../Images/Icons/facebook.png" class="contact-soc-med-item" alt="Facebook"></a>
+                        <a href="www.twitter.com"><img src="../Images/Icons/twitter.png" class="contact-soc-med-item" alt="Twitter"></a>
+                        <a href="www.instagram.com"><img src="../Images/Icons/instagram.png" class="contact-soc-med-item" alt="Instagram"></a>
+                    </div>
+                   <div class="contact-body">
+                    <div id="contact-form"><h3 id="feedback-header">Send us Feedback</h3>
+                        <form action="mailto:@gmail.com">
+                        		<span class="feedback-title">Feedback</span>
+                          <textarea name="feedback" class="contact-input" cols="30" rows="10"></textarea>
+                          <input type="submit" value="Submit" class="contact-submit"/>
+                        </form>
+                    </div>
+               </section>
+             <!--End of Contact Us Section-->
+             <!--Footer-->
+            <footer class="footer">
+                <span class="copyright"><h4>Awesome Blossoms Copyright (c) 2019</h4></span>
+                <a href="#" class="to-top">Back to Top</a>
+                <div class="footer-soc-med">
+                    <a href="http://www.facebook.com"><img src="../Images/Icons/facebook.png" class="footer-soc-med-item" alt="Facebook"></a>
+                    <a href="www.twitter.com"><img src="../Images/Icons/twitter.png" class="footer-soc-med-item" alt="Twitter"></a>
+                    <a href="www.instagram.com"><img src="../Images/Icons/instagram.png" class="footer-soc-med-item" alt="Instagram"></a>
+                </div>
+            </footer>
+            <!--End of Footer-->    
+        </div>
+        <!--End of Content-->
+    </body>
+</html>

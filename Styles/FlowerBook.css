@@ -1,0 +1,119 @@
+html{
+    font-size:10px;
+    height: 100%
+}
+
+body{
+    margin:0px;
+    padding:0px;
+    overflow-x:hidden;
+    height: 100%;
+}
+
+/*Purchase*/
+
+.book-section{
+    background-color: rgb(252, 226, 229);
+    padding: 1.5rem 2.5rem 1rem 2.5rem;
+    margin:5rem auto;
+    width: 100rem;
+    margin-bottom: 100px;
+}
+
+#book-header{
+    text-align:center;
+    font-size:2.4rem;
+    color:rgb(81, 54, 75);
+}
+
+#category-title{
+    font-size:1.6rem;
+    color:rgb(81, 54, 75);
+    margin-top:2.5rem;
+    margin-bottom:1rem;
+}
+
+#category-dropdown{
+    height:50rem;
+    padding-right:2rem;
+    float:left;
+}
+
+#book-window{
+    text-align:center;
+}
+
+
+.item-entity{
+    padding:1rem;
+    display:inline-block;
+    text-align:justify;
+    color:rgb(81, 54, 75);
+    background-color:rgb(201,224,221);
+    margin:1rem;
+}
+.card-img-top{
+    object-fit:cover;
+    width:125px !important;
+    height:125px;
+}
+.item-image{
+    margin-left:22px;
+    margin-right: auto;
+    width: 125px;
+    height: 125px;
+}
+
+.item-image:hover{
+    transform:scale(1.2);
+    transition: all .2s ease; 
+}
+
+.about-body{
+    font-size:1.6rem;
+}
+
+.button{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pagination {
+    display: inline-block;
+    margin-left: 303px;
+    margin-top: 7px;
+}
+.pagination a {
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid rgb(81, 54, 75);
+    color: black;
+}
+
+.pagination a:hover{
+    text-decoration: none;
+    color: rgb(81, 54, 75);
+}
+
+.pagination a.active {
+    background-color: rgb(81, 54, 75);
+    border: 1px solid rgb(81, 54, 75);
+    color: rgb(252, 226, 229);
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    
+}
+.pagination a:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.pagination a:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+/*Footer*/

@@ -1,0 +1,51 @@
+<?php include("NavBar.php"); ?>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../Styles/PurchaseAdmin.css">
+    </head>
+    <body>
+        <!--Content Box-->
+        <div class="container-fluid">
+            <div class="container-wrap">
+        <header class="header">
+            <div class="logo-title">
+                <img src="../Images/Icons/Logo/ABLogo.png" alt="Awesome Blossoms Logo" class="logo-header">
+                <h1 class="header-title">Awesome Blossoms</h1>
+            </div>
+            <nav class="topnav" id="myTopnav">
+                    <a href="#" class="list">Home</a></li>
+                    <a href="PurchaseFlowers.html" class="list">Purchase Flowers</a></li>
+                    <a href="FlowerBook.html" class="list">Flower Book</a></li>
+                    <a href="ContactUs.html" class="list">Contact Us</a></li>
+                    <a href="Profile.html" class="list">Profile</a></li>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+
+ <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+            <!--End of Header-->
+    <div class="row" id="admin-option">
+            <div class="col">
+                    <button onclick="addItem()" id="addBtn">Add New Item</button>
+            </div>
+        </div>
+        <div class="row" id="body">
+        </div>
+        <div id="storeFront">
+            
+            </div>
+        </div>
+        <!--End of Content-->
+    </body>
+</html>

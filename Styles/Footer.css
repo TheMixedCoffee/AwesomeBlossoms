@@ -1,0 +1,78 @@
+html{
+    font-size:10px;
+}
+
+body{
+    margin:0px;
+    padding:0px;
+    overflow-x:hidden;
+}
+
+.bg-design-image{
+    position:absolute;
+}
+
+.footer{
+    width:100%;
+    background-color: rgb(199, 219, 217);
+    padding: 1rem 0rem;
+    margin-top:5rem;
+    position: absolute;
+    bottom: 0;
+    
+}
+
+.copyright{
+    display: inline-block;
+    margin-left:10rem;
+    font-size:1.5rem;
+    color:black;
+}
+
+.footer-soc-med{
+    float: right;
+}
+
+.to-top{
+    margin-left:30rem;
+    font-size:1.5rem;
+    text-decoration:none;
+    color:rgb(255, 140, 154);
+}
+
+.to-top:hover{
+    background-color:rgb(252, 226, 229);
+    color: rgb(156, 181, 186);
+    border-bottom: solid .2rem rgb(255, 140, 154);
+    transition: all .2s ease; 
+}
+
+.to-top>a:hover{
+    text-decoration:none;
+    color:rgb(156, 181, 186);
+ }
+
+.footer-soc-med-item{
+    width:25px;
+    height:25px;
+    margin-right:4rem;
+    margin-top:1rem;
+    opacity:.75;
+}
+
+.footer-soc-med-item:hover{
+    width:25px;
+    height:25px;
+    margin-right:4rem;
+    margin-top:1rem;
+    opacity:1;
+}
+
+.container{
+    position: relative;
+    min-height: 100vh;
+}
+
+.container-wrap{
+    padding-bottom: 2.5rem;
+}

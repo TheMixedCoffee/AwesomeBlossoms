@@ -1,0 +1,38 @@
+#addBtn{
+    background-color:rgb(199, 219, 217);
+    color:rgb(74,76,52);
+    border: 1px solid rgb(139, 130, 133);
+}
+
+
+#optionFront{
+    background-color:white;
+    width:500px;
+    height:300px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 30px;
+    margin-bottom:10px;
+}
+
+#optionHeader{
+    margin-top:-20px;
+    width:100%;
+    padding:-20px;
+}
+
+#closeAdd{
+    
+    background-color:rgb(74,76,52);
+    color:rgb(194, 102, 102);
+    font-size:10px;
+    border:none;
+}
+
+#addItemOption{
+    width: 300px;
+    background-color:rgb(199, 219, 217);
+    padding:20px;
+    margin-left:auto;
+    margin-right:auto;
+}

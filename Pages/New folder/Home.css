@@ -1,0 +1,108 @@
+html{
+    font-size:10px;
+}
+
+body{
+    margin:0px;
+    padding:0px;
+    overflow-x:hidden;
+}
+
+.container{
+    
+}
+
+.bg-design-image{
+    position:absolute;
+}
+
+#bg-topleft{
+    top:9rem;
+    left:-2rem;
+    width:250px;
+    z-index: 1;
+}
+
+#bg-side{
+    right:1rem;
+    top:6rem;
+    z-index: -1;
+    transform:scale(1);
+}
+
+
+/*Flowers of the Month*/
+
+.flowers-of-the-month{
+    background-color: rgb(252, 226, 229);
+    margin-top:5.2rem;
+    margin-right:4rem;
+    width:30rem;
+    float:right;
+    clear:right;
+    text-align:center;
+}
+
+#fotm-header{
+    font-size:2.4rem;
+    color:rgb(124,159,165);
+}
+
+.fotm-item{
+    margin:1rem;
+}
+
+.fotm-item-image{
+    margin-left:-6rem;
+}
+
+.fotm-name{
+    font-size:1.5rem;
+    position:relative;
+    top:-8.5rem;
+    left:1rem;
+}
+
+
+/*About*/
+
+.about-section{
+    background-color: rgb(252, 226, 229);
+    padding: .01rem 2.5rem 1rem 2.5rem;
+    margin-top:5.2rem;
+    margin-left:10rem;
+    width: 100rem;
+}
+
+#about-header{
+    font-size:2.4rem;
+    color: rgb(124,159,165);
+}
+
+.about-body{
+    font-size:1.6rem;
+}
+
+/*Flower Gallery*/
+.flower-gallery{
+    background-color: rgb(252, 226, 229);
+    padding: .01rem 2.5rem 1rem 2.5rem;
+    margin-top:5rem;
+    margin-left:10rem;
+    width: 100rem;
+    text-align: center;
+}
+
+#flower-gallery-header{
+    font-size:2.4rem;
+    color: rgb(124,159,165);
+}
+
+.gallery-item{
+    display: inline-block;
+}
+
+.gallery-item-image{
+    margin-right:1rem;
+    margin-bottom:1rem;
+}

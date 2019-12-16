@@ -1,0 +1,69 @@
+html{
+    font-size:10px;
+    height: 100%
+}
+
+body{
+    margin:0px;
+    padding:0px;
+    overflow-x:hidden;
+    height: 100%;
+}
+
+/*Profile*/
+p{
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.profile-section{
+    font-family: 'Playfair Display', serif;
+    width:100%;
+    padding: 2rem;
+    margin: 3rem auto;
+    background-color: #A7BDB0;
+    text-align: center;
+    width: 400px;
+    height: 44.6rem;
+    color: rgb(81,57,75);
+}
+
+#profile-header{
+    font-family: 'Playfair Display', serif;
+    font-size:30px;
+}
+
+.profile-content{
+    font-family: 'Playfair Display', serif;
+    text-align: left;
+    margin: auto;
+    background-color: #BFCDC3;
+    height: 300px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 30px;
+}
+.profile-content p{
+    font-family: 'Playfair Display', serif;
+    color:#5A621C;
+    background-color:rgb(250,203,204);
+    width:90%;
+}
+
+.btn-edit{
+    font-family: 'Playfair Display', serif;
+    width:100px;
+    padding:10px 0px;
+    color:white;
+    background-color:#5A621C;
+    border-radius: 2px;
+    border:none;
+}
+.btn-edit:hover{
+    width:100px;
+    color:#5A621C;
+    background-color:rgb(250,203,204);
+    border-radius: 2px;
+    border:none;
+}

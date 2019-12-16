@@ -1,0 +1,103 @@
+<head>
+  <title>freeCodeCamp Survey Form</title>
+</head>
+
+<body>
+    <div> <!-- Title Div Container -->
+      <h1 id="title"><u>Vault-Tec Corporation Survey Form</u></h1>
+    </div>
+    <br>
+    <div class="survey-container"> <!-- Survey Div Container -->
+      <div> <!-- Description Div Container -->
+        <p id="description">Vault-Tec Corporation is here to serve you, please let us know how we can improve your stay!</p>
+      </div>
+      <br>
+      <div> <!-- Survey Form Div Container -->
+        <form id="survey-form" method="post" enctype="text/plain" action="mailto:joel.redick18@gmail.com">
+          <div class="rows"> <!-- Name Row Div Container -->
+            <div class="labels"> <!-- Name Label Div Container -->
+              <label id="name-label" for="name">Name:</label>
+            </div>
+            <div class="inputs"> <!-- Name Input Div Container -->
+              <input type="text" id="name" class="input-field" name="name" placeholder="Name" required/>
+            </div>
+          </div>
+          <div class="rows"> <!-- Email Row Div Container -->
+            <div class="labels"> <!-- Email Label Div Container -->
+              <label id="email-label" for="email">Email:</label>
+            </div>
+            <div class="inputs"> <!-- Email Input Div Container -->
+              <input type="email" id="email" class="input-field" name="email" placeholder="Email" required/>
+            </div>
+          </div>
+          <div class="rows"> <!-- Number Row Div Container -->
+            <div class="labels"> <!-- Number Label Div Container -->
+              <label id="number-label" for="number">Vault Number:</label>
+            </div>
+            <div class="inputs"> <!-- Number Input Div Container -->
+              <input type="number" id="number" class="input-field" name="number" placeholder="Number" min="1" max="125" required/>
+            </div>
+          </div>
+          <div class="rows"> <!-- Option Row Div Container -->
+            <div class="labels"> <!-- Option Label Div Container -->
+              <label id="option-label" for="current-role">Please select the option that best describes your role:</label>
+            </div>
+            <div class="inputs"> <!-- Option Select Div Container -->
+              <select id="dropdown" name="current-role">
+                <option value default>Select a role</option>
+                <option value="Overseer">Overseer</option>
+                <option value="Vault Security">Vault Security</option>
+                <option value="Vault Doctor">Vault Doctor</option>
+                <option value="Scientist">Scientist</option>
+                <option value="Vault Engineer">Vault Engineer</option>
+                <option value="Chef">Chef</option>
+                <option value="Vault Dweller">Vault Dweller</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="rows"> <!-- Radio Div Container -->
+            <div class="labels"> <!-- Radio Label Container -->
+              <label id="rating-label" for="rating">How likely are you to recommend Vault-Tec to a family member or friend?</label>
+            </div>
+            <div class="inputs"> <!-- Radio Input Container -->
+              <ul style="list-style: none;">
+                <li class="radio"><label>Definitely<input name="radio-buttons" value="1" type="radio" class="rating"></label></li>
+                <li class="radio"><label>Yes<input name="radio-buttons" value="2" type="radio" class="rating"></label></li>
+                <li class="radio"><label>Maybe<input name="radio-buttons" value="3" type="radio" class="rating"></label></li>
+                <li class="radio"><label>No<input name="radio-buttons" value="4" type="radio" class="rating"></label></li>
+                <li class="radio"><label>Never<input name="radio-buttons" value="5" type="radio" class="rating"></label></li>
+              </ul>
+            </div>
+          </div>
+          <div class="rows"> <!-- Checkbox Div Container -->
+            <div class="labels"> <!-- Checkbox Label Container -->
+              <label id="improvements" for="improvements">Please indicate which area(s) you feel could be improved in the future<br>(Check all that are applicable):</label>
+            </div>
+            <div class="inputs"> <!-- Checkbox Input Container -->
+              <ul id="improvements" style="list-style: none;">
+                <li class="checkbox"><label><input name="improve" value="1" type="checkbox" class="rating">Community Activities</label></li>
+                <li class="checkbox"><label><input name="improve" value="2" type="checkbox" class="rating">Radroach Infestations</label></li>
+                <li class="checkbox"><label><input name="improve" value="3" type="checkbox" class="rating">Raider Breaches</label></li>
+                <li class="checkbox"><label><input name="improve" value="4" type="checkbox" class="rating">Food & Drink Quality</label></li>
+                <li class="checkbox"><label><input name="improve" value="5" type="checkbox" class="rating">S.P.E.C.I.A.L. Classes</label></li>
+              </ul>
+            </div>
+          </div>
+          <div class="rows">
+            <div class="labels">
+              <label id="comments" for="comments">Any Other Comments or Suggestions?</label>
+            </div>
+            <div class="inputs">
+              <textarea id="comment-box" class="input-field" style="height:81px;width: 281px;resize:vertical;" name="comment" placeholder="Enter your comments/suggestions here"></textarea>
+            </div>
+          </div>
+          <div> <!-- Submit Button Div Container -->
+            <button id="submit" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</body>
+<br>
+<footer>&copy; 2017 Coded by: Joel Redick</footer>

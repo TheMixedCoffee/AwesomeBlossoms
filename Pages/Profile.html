@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../Styles/Profile.css">
+  <link rel="stylesheet" type="text/css" href="../Styles/Header.css">
+    <link rel="shortcut icon" type="image/png" href="../Images/Icons/Logo/favicon.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Awesome Blossoms</title>
+</head>
+<body>
+    <div class="container">
+        <img src="../Images/Placeholder/corner-piece.png" class="bg-design-image" id="bg-topleft" alt="corner piece">
+        <img src="../Images/Placeholder/corner-piece2.png" class="bg-design-image" id="bg-side" alt="corner piece">
+        <header class="header">
+            <div class="logo-title">
+                <img src="../Images/Icons/Logo/ABLogo.png" alt="Awesome Blossoms Logo" class="logo-header">
+                <h1 class="header-title">Awesome Blossoms</h1>
+            </div>
+            <!-- Header -->
+            <nav class="topnav" id="myTopnav">
+					<a href="Home.html" class="list">Home</a></li>
+                    <a href="PurchaseFlowers.html" class="list">Purchase Flowers</a></li>
+                    <a href="FlowerBook.html" class="list">Flower Book</a></li>
+                    <a href="ContactUs.html" class="list">Contact Us</a></li>
+                    <a href="Profile.html" class="list">Profile</a></li>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    				<i class="fa fa-bars"></i>
+  					</a>
+                </ul>
+            </nav>
+        </header>
+<!-- Profile -->
+<section class = "profile-section">
+                    <h2 id="profile-header">Profile</h2>
+                  	<div class="profile-content">
+                  		<p>Complete Name:</p>
+                  		<p>Address:</p>
+                  		<p>E-mail:</p>
+                  		<p>Contact Number:</p>
+                    </div>
+               </section>
+<!-- Footer -->
+ <footer class="footer">
+                <span class="copyright"><h5>Awesome Blossoms Copyright (c) 2019</h5></span>
+                <a href="#" class="to-top">Back to Top</a>
+                <div class="footer-soc-med">
+                    <a href="http://www.facebook.com"><img src="../Images/Icons/facebook.png" class="footer-soc-med-item" alt="Facebook"></a>
+                    <a href="www.twitter.com"><img src="../Images/Icons/twitter.png" class="footer-soc-med-item" alt="Twitter"></a>
+                    <a href="www.instagram.com"><img src="../Images/Icons/instagram.png" class="footer-soc-med-item" alt="Instagram"></a>
+            </footer>
+ <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</body>
+</html>
