@@ -80,6 +80,23 @@ a:hover{
   display: none;
 }
 
+.cart-counter{
+  margin-right:3rem;
+  font-weight:bold;
+  color:rgb(255, 140, 154);
+}
+
+#cart-icon{
+  width:25px;
+  height:25px;
+  margin-left:-2rem;
+  margin-right:2rem;
+  transition: transform .2s;
+}
+#cart-icon:hover{
+  transform: scale(1.5);
+}
+
 .dropdown{
 	background-color: rgb(199, 219, 217);
 	position: inline-block;

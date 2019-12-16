@@ -6,7 +6,12 @@ $activePage = "PurchaseFlowers";
         <link rel="stylesheet" type="text/css" href="../Styles/Purchase.css">
     </head>
     <body>
-        <?php include("NavBar.php"); ?>
+        <?php include("NavBar.php"); 
+        if(!isset($_GET['page'])){
+            $page = 1;
+        }else{
+            $page = $_GET['page'];
+        }?>
         <!--Content Box-->
         <div class="container-fluid">
             <div class="container-wrap">
@@ -41,7 +46,15 @@ $activePage = "PurchaseFlowers";
                 <div>
                         <h2 id="purchase-header">Purchase Flowers</h2>
                         <div id="view-cart-button">
-                                <a href="ViewCart.html">View Cart</a>
+                                <a href="ViewCart.php">View Cart</a>
+                                <?php
+                                if(isset($_SESSION['cart'])){
+                                    $numItems = count($_SESSION['cart']);
+                                    echo "<span>$numItems</span>";
+                                }else{
+                                    echo "<span>0</span>";
+                                }
+                                ?>
                         </div>
                             
                             <div id="category-dropdown">
@@ -56,62 +69,70 @@ $activePage = "PurchaseFlowers";
                 </div>
               
                 <div id="purchase-window">
-                    <section class="item-entity">
-                        <h3 class="item-title">Sun Flower</h3>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIfCJnWZPnClvBS_UneXYBlZrPb8VSmwx2B9tsAr61VFoFrBkj&s" class="item-image" alt="Item Image">
-                        <p class="item-desc">A Sunny Flower</p>
-                        <span class="item-price">Price:P50</span>
-                        <form action="" class="quick-purchase-qty">
-                            <input type="number" class="quick-purchase-qty-input">
-                            <button type="button" class="quick-purchase-btn">Add to Cart</button>
-                        </form>
-                    </section>
-                    <section class="item-entity">
-                            <h3 class="item-title">Tulip</h3>
-                            <img src="https://www.longfield-gardens.com/_ccLib/image/plants/DETA-775.jpg" class="item-image" alt="Item Image">
-                            <p class="item-desc">Two Lips</p>
-                            <span class="item-price">Price:P20</span>
-                            <form action="" class="quick-purchase-qty">
-                                <input type="number" class="quick-purchase-qty-input">
-                                <button type="button" class="quick-purchase-btn">Add to Cart</button>
-                            </form>
-                    </section>
-                    <section class="item-entity">
-                            <h3 class="item-title">Poppy</h3>
-                            <img src="https://cdn.shopify.com/s/files/1/1186/5156/products/Red-Poppy_1024x1024.jpeg?v=1456914865" class="item-image" alt="Item Image">
-                            <p class="item-desc">Give me bloody</p>
-                            <span class="item-price">Price:35</span>
-                            <form action="" class="quick-purchase-qty">
-                                <input type="number" class="quick-purchase-qty-input">
-                                <button type="button" class="quick-purchase-btn">Add to Cart</button>
-                            </form>
-                    </section>
-                    <section class="item-entity">
-                            <h3 class="item-title">Lorem Ipsum Flower</h3>
-                            <img src="https://via.placeholder.com/125" class="item-image" alt="Item Image">
-                            <p class="item-desc">The Lorem Ipsum Flower is very lorem ipsum dolar bills</p>
-                            <span class="item-price">Price:</span>
-                        </section>
-                        <section class="item-entity">
-                                <h3 class="item-title">Lorem Ipsum Flower</h3>
-                                <img src="https://via.placeholder.com/125" class="item-image" alt="Item Image">
-                                <p class="item-desc">The Lorem Ipsum Flower is very lorem ipsum dolar bills</p>
-                                <span class="item-price">Price:</span>
-                        </section>
-                        <section class="item-entity">
-                                <h3 class="item-title">Lorem Ipsum Flower</h3>
-                                <img src="https://via.placeholder.com/125" class="item-image" alt="Item Image">
-                                <p class="item-desc">The Lorem Ipsum Flower is very lorem ipsum dolar bills</p>
-                                <span class="item-price">Price:</span>
-                        </section>
+                    <?php
+                    include("AddCart.php");
+                    $resultsPerPage = 15;
+                    $startQuery = "SELECT * FROM item where itemStock > 0";
+                    $startRS = mysqli_query($conn,$startQuery);
+                    $numRS = mysqli_num_rows($startRS);
+                    $numPages = ceil($numRS/$resultsPerPage);
+                    $startingNum = ($page-1)*$resultsPerPage;
+                    $query = "SELECT * FROM item ORDER BY itemName ASC LIMIT ".$startingNum. ',' .$resultsPerPage;
+                    $stmt = mysqli_stmt_init($conn);
+                    if(!mysqli_stmt_prepare($stmt,$query)){
+                        echo "SQL statement failed!";
+                    }else{
+                        mysqli_stmt_execute($stmt);
+                        $rs = mysqli_stmt_get_result($stmt);
+                        while($row = mysqli_fetch_assoc($rs)){
+                            $currentItem = $row["itemID"];
+                            echo '<div class="item-entity col-md-3">
+                                    <h3 class="item-title">'.$row["itemName"].'</h3>
+                                    <img src="../Images/Shop/'.$row["itemPic"].'" class="item-image" alt="Item Image">
+                                    <p class="item-desc">'.$row["itemDesc"].'</p>
+                                    <span class="item-price">Price:P'.$row["itemPrice"].'</span>
+                                    <form method="POST" action="FlowerStore.php" class="quick-purchase-qty">
+                                        <input type="number" class="quick-purchase-qty-input" name="purchase-qty">
+                                        <input type="hidden" name="itemID" value="'.$row["itemID"].'">
+                                        <button type="submit" class="quick-purchase-btn" name="add">Add to Cart</button>
+                                    </form>
+                                    <div>
+                                    Tags:';
+                                    $queryAllTags = "SELECT * FROM category ORDER BY cat_name ASC";
+                                            $resultAllTags = mysqli_query($conn, $queryAllTags);
+                                            $queryItemTags = "SELECT * FROM item_category WHERE item_id = '$currentItem'";
+                                            $resultItemTags = mysqli_query($conn, $queryItemTags);
+                                            $rowTag = mysqli_fetch_assoc($resultItemTags);
+                                             while($rowAll = mysqli_fetch_assoc($resultAllTags))
+                                            {
+                                                if($rowAll["category_id"] == $rowTag["category_id"]){
+                                                    echo "     ".$rowAll["cat_name"];
+                                                    $rowTag = mysqli_fetch_assoc($resultItemTags);
+												}
+                                            }
+                                    echo '
+                                    </div>
+                                </div>';
+                        }
+                    }
+                ?>
                 </div>
+                <div class="pagination">
+							<a href="#"> &laquo; </a>
+							<?php
+							for($page=1;$page <= $numPages; $page++){
+								echo '<a href="FlowerStore.php?page=' . $page . '">' .$page. '</a>';
+							}						
+							?>
+							<a href="#"> &raquo; </a>
+						</div>           
             </div>
             <!--End of Purchase Section-->
             <!--Footer-->
-            <?php include("Footer.php"); ?>
             <!--End of Footer--> 
             </div>   
         </div>
+        <?php include("Footer.php"); ?>
         <!--End of Content-->
     </body>
 </html>

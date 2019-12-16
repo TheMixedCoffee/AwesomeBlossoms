@@ -22,16 +22,6 @@ body{
     height: 100%;
 }
 
-.logo-title{
-    margin-left:6rem;
-}
-
-.logo-header{
-    width:5rem;
-    height:5rem;
-    margin-left:3rem;  
-}
-
 .header-title{
     display:inline-block;
     color:rgb(74,76,52);

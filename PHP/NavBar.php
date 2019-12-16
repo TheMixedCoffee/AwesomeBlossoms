@@ -68,10 +68,17 @@
 			<div class="col" id="fbNav"><a href="FlowerBook.php">Flower Book</a></div>
 			<div class="col" id="contactNav"><a href="ContactUs.php">Contact Us</a></div>
 			<div class="col">
-				<div class="dropdown" id="profileNav"><?php if(isset($_SESSION['success'])){
-														echo $_SESSION['login_user'];
+				<div class="dropdown" id="profileNav"><?php	if(isset($_SESSION['cart'])){
+															$numItems = count($_SESSION['cart']);
+															echo "<span class='cart-counter'>$numItems</span>";
+														}else{
+															echo "<span class='cart-counter'>0</span>";
+														}
+													?>
+												<?php if(isset($_SESSION['success'])){
+														echo '<img src="../Images/Icons/basket.png" onclick="window.location=`ViewCart.php`" id="cart-icon" data-toggle="tooltip" title="View Cart">'.$_SESSION['login_user'];
 												}else{
-													echo "Profile";
+													echo '<img src="../Images/Icons/basket.png" onclick="window.location=`ViewCart.php`" id="cart-icon" data-toggle="tooltip" title="View Cart">'."Profile";
 												}
 												?>
 												</div>
@@ -126,3 +133,9 @@
 		</div>
 	</div>
 <?php if(isset($script)){ echo $script; } ?>
+<script>
+	var referenceElement = document.getElementById("cart-icon");
+	var popper = new Popper(referenceElement, onBottomPopper, {
+    placement: 'bottom'
+});
+</script>
