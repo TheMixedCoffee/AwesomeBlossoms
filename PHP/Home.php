@@ -6,8 +6,6 @@
     <head>
         <title>Awesome Blossoms</title>
         <link rel="stylesheet" type="text/css" href="../Styles/Home.css">
-        <link rel="shortcut icon" type="image/png" href="../Images/Icons/Logo/favicon.png"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php
         if(isset($_GET['success'])){
             echo "<script> alert('You have logged in successfully!') </script>";
@@ -19,10 +17,11 @@
         ?>
     </head>
     <body>
+    <?php include("NavBar.php") ?>
         <!--Content Box-->
         <div class="container-fluid">
             <!--Header-->
-            <?php include("NavBar.php") ?>
+           
             <!--End of Header-->
             <!--Aside-->
             <aside class="flowers-of-the-month">
