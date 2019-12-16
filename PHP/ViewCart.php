@@ -18,36 +18,51 @@
                     </button>
                 </a>
                 <h3 id="cart-header">Cart</h3>
-                <div class="cart-body-details">
-                    <img src="https://via.placeholder.com/125" class="product-prev" alt="Product Preview">
-                    <div class="flower-details">
+                <div class="cart-body-details row">
+                    <div class="flower-details col-md-6">
+                        <?php
+                            if(isset($_POST['purchase-qty'])){
+                                $qty = $_POST['purchase-qty'];
+                            }else{
+                                $qty = 1;
+                            }
+                            if(isset($_SESSION['cart'])){
+                                $product_id = array_column($_SESSION['cart'],"itemID");
+                                $query = "SELECT * from item";
+                                $rs = mysqli_query($conn,$query);
+                                while($row = mysqli_fetch_assoc($rs)){
+                                    foreach($product_id as $id){
+                                        if($row['itemID'] ==  $id){
+                                            echo '<div>
+                                                <form action="ViewCart.php" method="POST">
+                                                <img src="../Images/Shop/'.$row["itemPic"].'" class="cart-item-img" alt="Item Image">
+                                                <h3 class="item-title">'.$row["itemName"].'</h3>
+                                                <span class="item-price">Price:P'.$row["itemPrice"].'</span>
+                                                <input type="number" class="quick-purchase-qty-input" name="purchase-qty" value='.$qty.'>
+                                                <button type="submit" class="btn" name="Remove">Remove</button>
+                                                </form>
+                                                </div>';
+                                        }
+                                    }
+                                }
+                            }                            
+                        ?>
                         <p class="det-words">Product Details</p>
                     </div>
-                    <div class="order-details">
+                    <div class="order-details col-md-4">
                         <p class="det-words">Order Details</p>
+                        <div>
+                            <a href="Purchase Flowers - Purchase.html">
+                            <button id="purchase-button">Purchase</button>
+                            </a>
+                        </div>
                     </div>
-                    <button id="remove-cart">Remove from Cart</button>
-                    <button id="edit-order">Edit Order</button>
-                </div>
-                <a href="Purchase Flowers - Purchase.html">
-                <button id="purchase-button">Purchase</button>
-                </a>
-                </div>
-
                </div>
              <!--View Cart Section-->
              <!--Footer-->
-            <footer class="footer">
-                <span class="copyright"><h4>Awesome Blossoms Copyright (c) 2019</h4></span>
-                <a href="#" class="to-top">Back to Top</a>
-                <div class="footer-soc-med">
-                    <a href="http://www.facebook.com"><img src="../Images/Icons/facebook.png" class="footer-soc-med-item" alt="Facebook"></a>
-                    <a href="www.twitter.com"><img src="../Images/Icons/twitter.png" class="footer-soc-med-item" alt="Twitter"></a>
-                    <a href="www.instagram.com"><img src="../Images/Icons/instagram.png" class="footer-soc-med-item" alt="Instagram"></a>
-                </div>
-            </footer>
             <!--End of Footer-->    
         </div>
+        <?php include("Footer.php"); ?> 
         <!--End of Content-->
     </body>
 </html>
