@@ -67,21 +67,21 @@
             <section class="flower-gallery">
                 <h4 id="flower-gallery-header">Flower Gallery</h4>
                 <div class="gallery-item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\1.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\2.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\3.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\4.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\5.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\6.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\7.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\8.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\9.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\10.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\11.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\12.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\13.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\14.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="AwesomeBlossoms\Images\Home Flowers\15.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\1.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\2.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\3.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\4.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\5.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\6.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\7.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\8.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\9.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\10.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\11.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\12.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\13.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\14.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\15.jpg" class="gallery-item-image" alt="Gallery item">
                 </div>
             </section>
             <!--End of Gallery-->
