@@ -58,9 +58,9 @@
 			<div class="logo-title">
 				<img src="../Images/Icons/Logo/AwesomeBlossomsLogo.png" alt="Awesome Blossoms Logo" class="logo-header">
 			</div>
-			<!-- <div class="header-banner">
+			<div class="header-banner">
 				<img src="../Images/Icons/banner.png" alt="Awesome Blossoms Banner" class="banner-header">
-			</div> -->
+			</div>
 		</div>
 		<div class="row" id="rowID">
 			<div class="col" id="homeNav"><a href="Home.php">Home</a></div>
