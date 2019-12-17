@@ -34,7 +34,24 @@ if(isset($_POST['add'])){
         $itemPrice = $row['itemPrice'];           
         $itemQty = 1;
         $totalItemPrice = $itemQty * $itemPrice;
-        $query = "INSERT INTO order_line (itemID,quantity,totalPrice,accountID) VALUES ('$itemID','$itemQty','$totalItemPrice','$accountID') LIMIT 1";
+        $orderQuery = "SELECT orderID from order_line ORDER BY orderID DESC LIMIT 1";
+        $orderRS = mysqli_query($conn,$orderQuery);
+        if(isset($orderID)){
+            $orderID = $orderID;
+            echo "<script> alert('wow'); </script>";
+        }else{
+            if(mysqli_num_rows($orderRS) == 1){
+                if($numItems == 1){
+                    $orderRow = mysqli_fetch_assoc($orderRS);
+                    $orderID = $orderRow['orderID'] + 1;
+                 }
+            }else{
+                $orderID = 0;
+               }
+        }
+        
+        
+        $query = "INSERT INTO order_line (orderID,itemID,quantity,totalPrice,accountID) VALUES ('$orderID','$itemID','$itemQty','$totalItemPrice','$accountID') LIMIT 1";
         if(mysqli_query($conn,$query)){
     
         }else{

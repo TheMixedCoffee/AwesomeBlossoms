@@ -1,18 +1,7 @@
 <?php
    $activePage = "View Cart";
-
-   if(isset($_GET['action'])){
-       if($_GET['action']== "removed"){
-           include_once("ServerConnect.php");
-        foreach ($_SESSION['cart'] as $key => $value){
-            if($value["itemID"] == $_GET['id']){
-            unset($_SESSION['cart'][$key]);
-            }
-        }
-        }
-    }
-
 ?>
+
 <!DOCTYPE html>
     <head>
         <link rel="stylesheet" type="text/css" href="../Styles/ViewCart.css">
@@ -36,7 +25,7 @@
                 <div class="cart-body-details row">
                     <div class="flower-details col-md-6">
                     <p class="det-words">Product Details</p>
-                        <?php
+                        <?php                     
                             if(isset($_POST['addQty'])){
                                 $qty = $_POST['addQty'];
                             }else{
@@ -50,7 +39,7 @@
                                     foreach($product_id as $id){
                                         if($row['itemID'] ==  $id && $row['accountID'] == $_SESSION['accountID']){
                                             echo '<div class="py-3">
-                                                <form action="UpdateItemCart.php" method="POST">
+                                                <form action="ViewCart.php?action=updated?&id='.$id.'" method="POST">
                                                 <img src="../Images/Shop/'.$row["itemPic"].'" class="cart-item-img" alt="Item Image">
                                                 <h3 class="item-title">'.$row["itemName"].'</h3>
                                                 <span class="item-price">Price:P'.$row["itemPrice"].'</span>
@@ -59,6 +48,9 @@
                                                 <input type="hidden" name="itemID" value='.$row['itemID'].'>
                                                 <input type="number" class="quick-purchase-qty-input" name="addQty" value='.$row["quantity"].'>
                                                 <button type="submit" class="btn" name="update">Update</button>
+                                                </form>
+                                                <form action="ViewCart.php?action=removed?&id='.$id.'" method="POST">
+                                                <input type="hidden" name="itemID" value='.$row['itemID'].'>
                                                 <button type="submit" class="btn" name="remove">Remove</button>
                                                 </form>
                                                 </div>';
@@ -69,7 +61,6 @@
                                 echo "Cart is empty";
                             }                            
                         ?>
-                       
                     </div>
                     <div class="order-details col-md-4">
                         <p class="det-words">Order Details</p>
@@ -88,6 +79,7 @@
                                             echo '<div class="py-3">
                                                     <span class="cart-item-name">'.$row['itemName'].'</span>
                                                     <span class="cart-item-qty">'.$row['quantity'].'x</span>
+                                                    <span class="cart-item-price">'.$row['itemPrice'].'=</span>
                                                     <span class="cart-item-total">'.$totalPriceItem.'</span>
                                                  </div>';
                                         }
@@ -96,10 +88,12 @@
                                 echo '<hr><br><span class="cart-total-price">Total:P'.$totalPriceCart.'</span>';
                             }
                             ?>
-                            
-                            <a href="Purchase Flowers - Purchase.html">
+                            <form action="DeliveryDetails.php" method="POST">
+                            <?php
+                                echo '<input type="hidden" name="orderID" value='.$orderID.'>';
+                            ?>
                             <button id="purchase-button">Purchase</button>
-                            </a>
+                            </form>
                         </div>
                     </div>
                </div>
