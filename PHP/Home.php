@@ -17,7 +17,7 @@ $activePage = "Home";
     ?>
 </head>
 <body>
-    <?php include("NavBar.php") ?>
+    <?php include("NavBar.php");?>
     <!--Content Box-->
     <div class="container-fluid">
         <!--Header-->

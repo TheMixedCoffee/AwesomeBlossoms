@@ -1,5 +1,4 @@
 <?php
-    $activePage = 'Flower Shop - Admin';
     if(isset($_GET['addedTag'])){
         echo "<script> alert('Tag added to database!') </script>";
     }else if(isset($_GET['activeTag'])){
@@ -18,7 +17,8 @@
         echo "<script> alert('Deleted item from database'); </script>";
     }
 ?>
-<?php include("NavBar.php"); ?>
+<?php include("NavBar.php"); 
+ $activePage = 'Flower Shop - Admin';?>
 <?php include("removeTag.php"); ?>
 <?php include("AddTag.php"); ?>
 <?php include("NewAddItemAdmin.php"); ?>

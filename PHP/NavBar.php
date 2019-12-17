@@ -3,37 +3,40 @@
 	include('LogInConnect.php'); //Login
 ?>
 <?php
-				if($activePage == "Home"){
-					echo '<style type="text/css">
-						#homeNav{
+				if(isset($activePage)){
+					if($activePage == "Home"){
+						echo '<style type="text/css">
+							#homeNav{
+								background-color:rgb(170, 183, 174);
+								font-weight:bold;
+								</style>';
+					}else if($activePage == "PurchaseFlowers"){
+						echo '<style type="text/css">
+						#pfNav{
 							background-color:rgb(170, 183, 174);
 							font-weight:bold;
 							</style>';
-				}else if($activePage == "PurchaseFlowers"){
-					echo '<style type="text/css">
-					#pfNav{
-						background-color:rgb(170, 183, 174);
-						font-weight:bold;
-						</style>';
-				}else if($activePage == "Flower Book"){
-					echo '<style type="text/css">
-						#fbNav{
-							background-color:rgb(170, 183, 174);
-							font-weight:bold;
-							</style>';
-				}else if($activePage == "Contact Us"){
-					echo '<style type="text/css">
-						#contactNav{
-							background-color:rgb(170, 183, 174);
-							font-weight:bold;
-							</style>';
-				}else if($activePage == "Profile"){
-					echo '<style type="text/css">
-						#profileNav{
-							background-color:rgb(170, 183, 174);
-							font-weight:bold;
-							</style>';
+					}else if($activePage == "Flower Book"){
+						echo '<style type="text/css">
+							#fbNav{
+								background-color:rgb(170, 183, 174);
+								font-weight:bold;
+								</style>';
+					}else if($activePage == "Contact Us"){
+						echo '<style type="text/css">
+							#contactNav{
+								background-color:rgb(170, 183, 174);
+								font-weight:bold;
+								</style>';
+					}else if($activePage == "Profile"){
+						echo '<style type="text/css">
+							#profileNav{
+								background-color:rgb(170, 183, 174);
+								font-weight:bold;
+								</style>';
+					}
 				}
+				
 ?>
 <!DOCTYPE html>
 <html>

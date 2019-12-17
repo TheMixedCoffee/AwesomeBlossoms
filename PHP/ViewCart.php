@@ -1,6 +1,17 @@
 <?php
    $activePage = "View Cart";
 
+   if(isset($_GET['action'])){
+       if($_GET['action']== "removed"){
+           include_once("ServerConnect.php");
+        foreach ($_SESSION['cart'] as $key => $value){
+            if($value["itemID"] == $_GET['id']){
+            unset($_SESSION['cart'][$key]);
+            }
+        }
+        }
+    }
+
 ?>
 <!DOCTYPE html>
     <head>
@@ -39,7 +50,7 @@
                                     foreach($product_id as $id){
                                         if($row['itemID'] ==  $id && $row['accountID'] == $_SESSION['accountID']){
                                             echo '<div class="py-3">
-                                                <form action="ViewCart.php?action=removed&id='.$row['itemID'].'" method="POST">
+                                                <form action="UpdateItemCart.php" method="POST">
                                                 <img src="../Images/Shop/'.$row["itemPic"].'" class="cart-item-img" alt="Item Image">
                                                 <h3 class="item-title">'.$row["itemName"].'</h3>
                                                 <span class="item-price">Price:P'.$row["itemPrice"].'</span>

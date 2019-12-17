@@ -204,7 +204,8 @@ body{
 
 .item-image{
     margin-left:5rem;
-    max-width:125px;
+    object-fit: cover;
+    max-width:125px !important;
     max-height:125px;
 }
 
