@@ -19,25 +19,19 @@ $activePage = "PurchaseFlowers";
             <aside class="related-articles">
                 <h3 id ="related-article-header">Related Articles</h3>
                 <article class="article-item">
-                    <h4 class ="article-title">Article Title</h4>
-                    <img src="https://via.placeholder.com/50" class="article-item-image" alt="Related Article Image">
-                    <p class="article-desc">Exorcizamus te, omnis immundus spiritus,
-                         omnis satanica potestas, omnis incursio infernalis adversarii, omnis legio,
-                          omnis congregatio et secta diabolica. </p>
+                    <h4 class ="article-title">Scents and sensibility: Time to wake up and (actually) smell the roses</h4>
+                    <img src="../Images/Articles/1.jpg" class="article-item-image" alt="Related Article Image">
+                    <p class="article-desc">We are a generation that have become used to lacklustre smelling botanicals. Adrian Higgins gets to the root of how we can make our gardens smell great again. <a href="https://www.independent.co.uk/environment/flower-garden-scent-fragrance-perfumed-plants-a9239286.html">Read more...</a> </p>
                 </article>
                 <article class="article-item">
-                    <h4 class ="article-title">Article Title</h4>
-                    <img src="https://via.placeholder.com/50" class="article-item-image" alt="Related Article Image">
-                    <p class="article-desc">Exorcizamus te, omnis immundus spiritus,
-                            omnis satanica potestas, omnis incursio infernalis adversarii, omnis legio,
-                             omnis congregatio et secta diabolica. </p>
+                    <h4 class ="article-title">12 best artificial flowers: Realistic florals and foliage to brighten up any living space</h4>
+                    <img src="../Images/Articles/2.jpg" class="article-item-image" alt="Related Article Image">
+                    <p class="article-desc">Want a beautiful floral arrangement that will last for years? Opt for these striking faux blooms. <a href="https://www.independent.co.uk/extras/indybest/house-garden/best-fake-flowers-home-bouquet-silk-artificial-wedding-graves-uk-a8928856.html ">Read more...</a> </p>
                 </article>
                 <article class="article-item">
-                    <h4 class ="article-title">Article Title</h4>
-                    <img src="https://via.placeholder.com/50" class="article-item-image" alt="Related Article Image">
-                    <p class="article-desc">Exorcizamus te, omnis immundus spiritus,
-                            omnis satanica potestas, omnis incursio infernalis adversarii, omnis legio,
-                             omnis congregatio et secta diabolica. </p>
+                    <h4 class ="article-title">Gardeners urged to let lawns run wild and count flowers to help save bees</h4>
+                    <img src="../Images/Articles/3.jpg" class="article-item-image" alt="Related Article Image">
+                    <p class="article-desc">'We're helping turn our famous trimmed green lawns into riots of colour with buttercups, daises and dandelions,' say campaigners. <a href="https://www.independent.co.uk/environment/no-mow-may-gardeners-wild-flowers-help-save-bees-a8927161.html">Read more...</a> </p>
                 </article>
             </aside>
             <!--End of Aside-->
