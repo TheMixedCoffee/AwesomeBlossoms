@@ -28,24 +28,24 @@ $activePage = "Home";
             <h3 id ="fotm-header">Flowers of the Month</h3>
             <div class="fotm-item">
                 <div class="fotm-item">
-                    <img src="...\Images\Home Flowers\5.jpg" class="fotm-item-image" alt="Flower of the month">
+                    <img src="..\Images\Home Flowers\5.jpg" class="fotm-item-image" alt="Flower of the month">
                     <span class="fotm-name">Lavender</span>
                 </div>
                 <div class="fotm-item">
-                    <img src="...\Images\Home Flowers\7.jpg" class="fotm-item-image" alt="Flower of the month">
+                    <img src="..\Images\Home Flowers\7.jpg" class="fotm-item-image" alt="Flower of the month">
                     <span class="fotm-name">Peony</span>
                 </div>
                 <div class="fotm-item">
-                    <img src="...\Images\Home Flowers\14.jpg" class="fotm-item-image" alt="Flower of the month">
+                    <img src="..\Images\Home Flowers\14.jpg" class="fotm-item-image" alt="Flower of the month">
                     <span class="fotm-name">Yellow Daisy</span>
                 </div>
                 <div class="fotm-item">
-                    <img src="...\Images\Home Flowers\15.jpg" class="fotm-item-image" alt="Flower of the month">
+                    <img src="..\Images\Home Flowers\15.jpg" class="fotm-item-image" alt="Flower of the month">
                     <span class="fotm-name">Daffodil</span>
 
                 </div>    
                 <div class="fotm-item">
-                    <img src="...\Images\Home Flowers\1.jpg" class="fotm-item-image" alt="Flower of the month">
+                    <img src="..\Images\Home Flowers\1.jpg" class="fotm-item-image" alt="Flower of the month">
                     <span class="fotm-name">Bromeliads</span>
                 </div>
             </aside>
@@ -71,7 +71,7 @@ $activePage = "Home";
                     <img src="..\Images\Home Flowers\1.jpg" class="gallery-item-image" alt="Gallery item">
                     <img src="..\Images\Home Flowers\2.jpg" class="gallery-item-image" alt="Gallery item">
                     <img src="..\Images\Home Flowers\3.jpg" class="gallery-item-image" alt="Gallery item">
-                    <img src="...\Images\Home Flowers\4.jpg" class="gallery-item-image" alt="Gallery item">
+                    <img src="..\Images\Home Flowers\4.jpg" class="gallery-item-image" alt="Gallery item">
                     <img src="..\Images\Home Flowers\5.jpg" class="gallery-item-image" alt="Gallery item">
                     <img src="..\Images\Home Flowers\6.jpg" class="gallery-item-image" alt="Gallery item">
                     <img src="..\Images\Home Flowers\7.jpg" class="gallery-item-image" alt="Gallery item">
