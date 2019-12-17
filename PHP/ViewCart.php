@@ -11,6 +11,7 @@
         include("NavBar.php");
         include("AddCart.php");
         include("removeFromCart.php");
+        include("UpdateItemCart.php");
         ?>
             <!--End of Header-->
             <!--View Cart Us-->
@@ -46,6 +47,7 @@
                                                 <label for="qty">Quantity:</label>
                                                 <input type="hidden" name="itemID" value='.$row['itemID'].'>
                                                 <input type="number" class="quick-purchase-qty-input" name="addQty" value='.$row["quantity"].'>
+                                                <button type="submit" class="btn" name="update">Update</button>
                                                 <button type="submit" class="btn" name="remove">Remove</button>
                                                 </form>
                                                 </div>';
