@@ -71,7 +71,7 @@ $activePage = "PurchaseFlowers";
                 <div id="purchase-window">
                     <?php
                     include("AddCart.php");
-                    $resultsPerPage = 15;
+                    $resultsPerPage = 9;
                     $startQuery = "SELECT * FROM item where itemStock > 0";
                     $startRS = mysqli_query($conn,$startQuery);
                     $numRS = mysqli_num_rows($startRS);

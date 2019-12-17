@@ -24,7 +24,7 @@
 					<h2 id="book-header">Flower Book</h2>
 					<div id="book-window row text-center">
 						<?php
-						$resultsPerPage = 15;
+						$resultsPerPage = 5;
 						$startQuery = "SELECT * FROM item";
 						$startRS = mysqli_query($conn,$startQuery);
 						$numRS = mysqli_num_rows($startRS);
