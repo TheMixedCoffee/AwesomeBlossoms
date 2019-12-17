@@ -13,6 +13,8 @@ $activePage = "Home";
         echo "<script type='text/javascript'> alert('Signed up successfully! You can now log in.') </script>";
     }else if(isset($_GET['logout'])){
         echo "<script type='text/javascript'> alert('Logged out') </script>";
+    }else if(isset($_GET['delivered'])){
+        echo '<script> alert("Thank you for purchasing!"); </script>';
     }
     ?>
 </head>

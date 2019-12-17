@@ -90,7 +90,8 @@
                             ?>
                             <form action="DeliveryDetails.php" method="POST">
                             <?php
-                                echo '<input type="hidden" name="orderID" value='.$orderID.'>';
+                                $inputOrder = $_SESSION['order'];
+                                echo '<input type="hidden" name="orderID" value='.$inputOrder.'>';
                             ?>
                             <button id="purchase-button">Purchase</button>
                             </form>

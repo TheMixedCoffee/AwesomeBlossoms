@@ -23,34 +23,26 @@ if(isset($_POST['add'])){
             );
             $_SESSION['cart'][0] = $item_array;
         }
-        $priceQuery = "SELECT * from item WHERE itemID='$itemID'";
-        $priceRS = mysqli_query($conn,$priceQuery);
-        $row = mysqli_fetch_assoc($priceRS);
         $Email = $_SESSION['current_user'];
         $accountQuery = "SELECT AccountID from account where Email='$Email'";
         $accountRS = mysqli_query($conn,$accountQuery);
         $accRow = mysqli_fetch_assoc($accountRS);
         $accountID = $accRow['AccountID'];
+        if(!isset($_SESSION['order'])){
+            $orderQuery = "INSERT INTO user_order (accountID) VALUES('$accountID');";
+            $orderRS = mysqli_query($conn,$orderQuery);
+        }
+        $getOrderID = "SELECT orderID from user_order where accountID ='$accountID'";
+        $getOrderRS = mysqli_query($conn,$getOrderID);
+        $orderRow = mysqli_fetch_assoc($getOrderRS);
+        $orderID = $orderRow['orderID'];
+        $_SESSION['order'] = $orderID;
+        $priceQuery = "SELECT * from item WHERE itemID='$itemID'";
+        $priceRS = mysqli_query($conn,$priceQuery);
+        $row = mysqli_fetch_assoc($priceRS);
         $itemPrice = $row['itemPrice'];           
         $itemQty = 1;
-        $totalItemPrice = $itemQty * $itemPrice;
-        $orderQuery = "SELECT orderID from order_line ORDER BY orderID DESC LIMIT 1";
-        $orderRS = mysqli_query($conn,$orderQuery);
-        if(isset($orderID)){
-            $orderID = $orderID;
-            echo "<script> alert('wow'); </script>";
-        }else{
-            if(mysqli_num_rows($orderRS) == 1){
-                if($numItems == 1){
-                    $orderRow = mysqli_fetch_assoc($orderRS);
-                    $orderID = $orderRow['orderID'] + 1;
-                 }
-            }else{
-                $orderID = 0;
-               }
-        }
-        
-        
+        $totalItemPrice = $itemQty * $itemPrice;        
         $query = "INSERT INTO order_line (orderID,itemID,quantity,totalPrice,accountID) VALUES ('$orderID','$itemID','$itemQty','$totalItemPrice','$accountID') LIMIT 1";
         if(mysqli_query($conn,$query)){
     
