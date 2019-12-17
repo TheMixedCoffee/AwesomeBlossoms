@@ -18,6 +18,7 @@
 }
 .header-banner{
   float:right;
+  z-index: -100;
 }
 .banner-header{
   width:30rem;
